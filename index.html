@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חנות בגדים - דף הבית</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadAndDisplay()">
+
+    <div class="side-bg side-bg-left"></div>
+    <div class="side-bg side-bg-right"></div>
+
+    <header>
+        <h1>👗 חנות הבגדים</h1>
+        <nav>
+            <a href="index.html" class="active">דף הבית</a>
+            <a href="about.html">אודות</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h2>הוספת פריט לבוש</h2>
+
+        <p id="errorPar" class="error-msg"></p>
+
+        <form onsubmit="addCloth(event)" id="clothForm" noValidate>
+            <div class="form-grid">
+
+                <div class="form-field">
+                    <label for="typeBox">סוג בגד:</label>
+                    <select id="typeBox">
+                        <option selected disabled hidden value="">בחר סוג...</option>
+                        <option>חולצה</option>
+                        <option>מכנסיים</option>
+                        <option>שמלה</option>
+                        <option>חצאית</option>
+                        <option>כובע</option>
+                        <option>מעיל</option>
+                        <option>חליפה</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="descriptionBox">תיאור הבגד:</label>
+                    <input type="text" id="descriptionBox" placeholder="למשל: חולצת כותנה שרוול קצר">
+                </div>
+
+                <div class="form-field">
+                    <label for="colorBox">צבע הבגד:</label>
+                    <input type="color" id="colorBox" value="#000000">
+                </div>
+
+                <div class="form-field">
+                    <label for="priceBox">מחיר (₪):</label>
+                    <input type="number" id="priceBox" step="0.01" placeholder="1 - 1000">
+                </div>
+
+                <div class="form-field">
+                    <label for="discountBox">הנחה (%):</label>
+                    <input type="number" id="discountBox" placeholder="0 - 100">
+                </div>
+
+                <div class="form-field">
+                    <label for="imageBox">קישור לתמונה:</label>
+                    <input type="url" id="imageBox" placeholder="https://example.com/image.jpg">
+                </div>
+
+                <button class="btn-add full-width">➕ הוסף פריט לבוש</button>
+
+            </div>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>סוג</th>
+                    <th>תיאור</th>
+                    <th>צבע</th>
+                    <th>מחיר</th>
+                    <th>הנחה</th>
+                    <th>מחיר סופי</th>
+                    <th>תמונה</th>
+                    <th>מחיקה</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+
+        <div id="statsPar" class="stats-box"></div>
+
+    </main>
+
+    <footer>
+        <p>© חנות הבגדים | פותח על ידי Samuel Sion</p>
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

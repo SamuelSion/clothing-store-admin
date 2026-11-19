@@ -1,0 +1,366 @@
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    direction: rtl;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header ===== */
+header {
+    background: linear-gradient(to left, #11d295, #2a6197);
+    color: white;
+    padding: 25px 20px 18px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 25px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: white;
+}
+
+nav a.active {
+    background-color: white;
+    color: #6a1b9a;
+    border-color: white;
+}
+
+/* ===== Main Content ===== */
+main {
+    flex: 1;
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+main h2 {
+    color: #6a1b9a;
+    margin-bottom: 18px;
+    font-size: 1.5rem;
+    border-bottom: 3px solid #ce93d8;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* ===== Error Message ===== */
+.error-msg {
+    color: #d50000;
+    background-color: #ffebee;
+    border: 1px solid #ef9a9a;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    display: none;
+}
+
+.error-msg.show {
+    display: block;
+}
+
+/* ===== Form ===== */
+form {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    border-top: 4px solid #6a1b9a;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-field.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-field label {
+    font-weight: bold;
+    font-size: 0.92rem;
+    color: #555;
+}
+
+.form-field input,
+.form-field select {
+    padding: 10px 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    border-color: #6a1b9a;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.1);
+}
+
+.form-field input[type="color"] {
+    height: 42px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.btn-add {
+    grid-column: 1 / -1;
+    padding: 12px 30px;
+    background: linear-gradient(to left, #11d295, #2a6197);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.2s;
+    margin-top: 5px;
+}
+
+.btn-add:hover {
+    opacity: 0.88;
+    transform: translateY(-2px);
+}
+
+/* ===== Table ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+thead {
+    background: linear-gradient(to left, #e7e74d, #d4905c);
+    color: white;
+}
+
+th {
+    padding: 14px 10px;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+td {
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background-color: #faf0ff;
+}
+
+.table-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+}
+
+.delete-btn {
+    padding: 8px 18px;
+    background-color: #ff1744;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #d50000;
+    transform: scale(1.08);
+}
+
+/* ===== Stats ===== */
+.stats-box {
+    background: white;
+    padding: 18px 25px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    font-size: 1.05rem;
+    line-height: 2;
+    border-right: 5px solid #11d295;
+}
+
+.stats-box strong {
+    color: #6a1b9a;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #2c2c2c;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* ===== About Page ===== */
+.about-content {
+    background: white;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    line-height: 2;
+    font-size: 1.1rem;
+    border-top: 4px solid #6a1b9a;
+}
+
+.about-content h3 {
+    color: #6a1b9a;
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #ce93d8;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.about-content p {
+    margin-bottom: 10px;
+}
+
+.developer-card {
+    background: linear-gradient(135deg, #f3e5f5, #fce4ec);
+    padding: 20px 25px;
+    border-radius: 12px;
+    margin-top: 15px;
+    border-right: 5px solid #6a1b9a;
+}
+
+.developer-card p {
+    margin: 5px 0;
+}
+
+/* ===== No Items Message ===== */
+.no-items {
+    text-align: center;
+    color: #999;
+    font-size: 1.1rem;
+    padding: 30px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ===== Final Price Colors ===== */
+.price-low {
+    color: green;
+    font-weight: bold;
+}
+
+.price-medium {
+    color: blue;
+    font-weight: bold;
+}
+
+.price-high {
+    color: red;
+    font-weight: bold;
+}
+
+.color-cell {
+    font-weight: bold;
+}
+
+/* ===== Side Background Images ===== */
+.side-bg {
+    position: fixed;
+    top: 0;
+    width: calc((100vw - 1100px) / 2);
+    min-width: 200px;
+    height: 100vh;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.side-bg-left {
+    left: 0;
+    background-image: url("images/background-left.jpeg");
+}
+
+.side-bg-right {
+    right: 0;
+    background-image: url("images/background-right.jpeg");
+}
+
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 1400px) {
+    .side-bg {
+        display: none;
+    }
+}
+
+/* ===== About Page Images ===== */
+.about-images {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.about-images img {
+    width: 50%;
+    border-radius: 10px;
+    object-fit: cover;
+}
